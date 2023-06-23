@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Note details
+{% endblock %}
+
+{% block content %}
+<h1>Note details</h1>
+
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+   <div class="button-row">
+    <button type="submit">Zapisz</button>
+    <button type="submit" name="delete">Usuń</button>
+   </div>
+</form>
+
+{% endblock %}

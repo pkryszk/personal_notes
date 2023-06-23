@@ -1,9 +1,12 @@
+from django.contrib.auth.decorators import login_required
 from django.urls import path
-from .views import index, notes_list,test_1,note_details
+from .views import index, notes_list,new_note,edit_note,register
 
 urlpatterns = [
     path('', index, name='index'),
-    path('1', test_1, name='test_1'),
     path('notes_list', notes_list, name='notes_list'),
-    path('notes/<int:note_id>/', note_details, name='note_detail'),
+    path('<int:note_id>', edit_note, name='edit_note'),
+    path('new_note', new_note, name='new_note'),
+    path('register/', register, name='register'),
+
     ]
